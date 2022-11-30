@@ -15,9 +15,12 @@ const userRoute = require("./routes/users");
 app.use("/posts", postRoute);
 app.use("/users", userRoute);
 
+// Use default router
+const PORT = process.env.PORT || 3000;
+
 // Create a listen port
-app.listen(3000, () => {
-  console.log("Listen port 3000");
+app.listen(PORT, () => {
+  console.log("Server is running");
 });
 
 // Connect the MongoDB
