@@ -16,6 +16,7 @@ router.get("/", async (req, res) => {
 // Save a User
 router.post("/", async (req, res) => {
   const user = new User({
+    id: req.body.id,
     username: req.body.username,
     fullname: req.body.fullname,
     email: req.body.email,
@@ -49,6 +50,7 @@ router.patch("/:userId", async (req, res) => {
       { _id: req.params.userId },
       {
         $set: {
+          id: req.body.id,
           username: req.body.username,
           fullname: req.body.fullname,
           email: req.body.email,
